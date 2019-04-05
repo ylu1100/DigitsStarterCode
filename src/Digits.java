@@ -11,9 +11,14 @@ public class Digits
     public Digits (int num)
     {
         int Digit=num;
-        for(int x = 10;x<Digit*10;x=x*10){
-            digitList.add(0,Digit%10);
-            Digit=Digit/10;
+        for(int x = 10;x<Digit*10;x=x*10) {
+            if (Digit < 10) {
+                digitList.add(0, Digit);
+            }
+            else{
+                digitList.add(0, Digit % 10);
+                Digit = Digit / 10;
+            }
         }
 //implemented in part (a)
     }
